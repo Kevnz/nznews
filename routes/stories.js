@@ -6,7 +6,9 @@ exports.showStory = function(req, res){
         res.send(doc);
     } else {
         var get = require('../lib/loader').getContent(doc, function (err, content) {
-
+            if (err) {
+                res.send(200, content);
+            }
             doc.Content = content;
             res.send(docs);
         })
