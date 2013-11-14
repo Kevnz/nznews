@@ -7,8 +7,8 @@ exports.showStory = function(req, res){
 };
 exports.showStories = function(req, res){
     var stories = require('../lib/db')('NewsItem');
-
-    stories.find().sort({PublishedDate: -1}, function(err, docs) {
+    var skip = req.query.start || 0;
+    stories.find().sort({PublishedDate: -1}).limit(40).skip(0).toArray(function(err, docs) {
         res.send(docs);
     });
 };
