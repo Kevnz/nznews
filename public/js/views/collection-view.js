@@ -16,6 +16,7 @@
 				source = Y.TemplateLoader(this.template),
 				compiledTemplate = Y.Handlebars.compile(source),
 				data = { items: this.get('modelList').toJSON() };
+			Y.log(source);
 			var html = compiledTemplate(data);
 			
 			container.setHTML(html);
