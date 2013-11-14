@@ -10,7 +10,7 @@ exports.showStory = function(req, res){
                 res.send(200, content);
             }
             doc.Content = content;
-            res.send(docs);
+            res.send(doc);
         })
     }
     
