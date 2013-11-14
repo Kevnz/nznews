@@ -11,7 +11,8 @@
     "express3-handlebars": "latest",
     "qconf": "~2.2.0",
     "mongojs": "~0.9.6",
-    "combohandler": "~0.3.8"
+    "combohandler": "~0.3.8",
+    "yui": "~3.13.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

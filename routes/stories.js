@@ -1,7 +1,17 @@
 exports.showStory = function(req, res){
   var stories = require('../lib/db')('NewsItem');
   stories.findOne({Key: req.params.id}, function(err, doc) {
-    res.send(doc);
+
+    if (doc.Content) {
+        res.send(doc);
+    } else {
+        var get = require('../lib/loader').getContent(doc, function (err, content) {
+
+            doc.Content = content;
+            res.send(docs);
+        })
+    }
+    
   }); 
 
 };
