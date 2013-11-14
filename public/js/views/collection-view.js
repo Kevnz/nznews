@@ -17,6 +17,7 @@
 				compiledTemplate = Y.Handlebars.compile(source),
 				data = { items: this.get('modelList').toJSON() };
 			Y.log(source);
+			Y.log(data);
 			var html = compiledTemplate(data);
 			
 			container.setHTML(html);
