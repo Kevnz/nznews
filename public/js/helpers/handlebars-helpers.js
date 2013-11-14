@@ -3,7 +3,7 @@
 		if(!url) {
 			return '';
 		}
-		if (url.indexOf('/warning.jpg') === -1) {
+		if (url.indexOf('/warning.jpg') !== -1) {
 			return '';
 		}
 
