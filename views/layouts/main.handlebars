@@ -57,10 +57,11 @@
 
 
 <script src="/yui_config.js"></script>
+
+<script>
+    YUI.applyConfig({"comboBase": window.location.origin + '/combo?'});
+</script>
 <script src="/js/news-app.js"></script>
-        <script>
-            YUI.applyConfig({"comboBase": window.location.origin + '/combo?'});
-        </script>
 <script>
 YUI().use('node-base', 'node-event-delegate', function (Y) {
     // This just makes sure that the href="#" attached to the <a> elements
