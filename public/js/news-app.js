@@ -140,7 +140,7 @@
 		transitions: true,
 		viewContainer: '#app',
 		container: 'body',
-		scrollToTop: true
+		scrollToTop: false
 	});
 	Y.log('gonna load ' + window.pathname);
 	app.render().save(window.pathname);

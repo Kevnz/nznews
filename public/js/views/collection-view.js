@@ -21,7 +21,7 @@
 			var html = compiledTemplate(data);
 			
 			container.setHTML(html);
-
+			Y.log(container.getHTML());
 			if (!container.inDoc()) {
 				Y.one('body').append(container);
 			}
