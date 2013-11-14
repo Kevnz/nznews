@@ -68,11 +68,11 @@
 				Y.log('stories are null');
 				self.stories = new Y.StoryList({ start: 0 });
 				self.stories.load(function () {
-					self.showView('home', { template: '/templates/stories.handlebars', modelList: self.stories });
+					self.showView('home', { template: '/templates/stories.html', modelList: self.stories });
 				});
 			} else {
 				Y.log('previous maybe?');
-				self.showView('home', { template: '/templates/stories.handlebars', modelList: self.stories, previous: req.query.previous, render:true },
+				self.showView('home', { template: '/templates/stories.html', modelList: self.stories, previous: req.query.previous, render:true },
 				function () {
 					Y.log('showview callback');
 					var prev = req.query.previous;
@@ -101,7 +101,7 @@
 			self.story.load(function () {
 				Y.one('title').setContent(self.story.get('Title') + ' New Zealand News');
 				Y.log('show loaded ');
-				self.showView('story', { model: self.story, template:'/templates/story.handlebars' });
+				self.showView('story', { model: self.story, template:'/templates/story.html' });
 
 			});
 		},
