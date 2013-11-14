@@ -12,7 +12,7 @@
 
 	Y.Handlebars.registerHelper('loading', function (field) {
 
-		if (!field || field.toString().length < 1) {
+		if (field && field.toString().length < 1) {
 			return '<div class="loading"></div>';
 		}
 		return '<div>' + field + '</div>';
