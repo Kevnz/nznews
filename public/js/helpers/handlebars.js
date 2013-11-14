@@ -1,8 +1,12 @@
 ﻿YUI.add('handlebars-helpers', function(Y) {
 	Y.Handlebars.registerHelper('thumbnail', function (url) {
+		if(url === null) {
+			return '';
+		}
 		if (url.indexOf('/warning.jpg') === -1) {
 			return '';
 		}
+
 		return '<img src="' + url + '" width="100px" />';
 	});
 
