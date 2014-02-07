@@ -1,21 +1,18 @@
 exports.showStory = function(req, res){
   var stories = require('../lib/db')('NewsItem');
   stories.findOne({Key: req.params.id}, function(err, doc) {
-
-    if (doc.Content) {
-        res.send(doc);
-    } else {
-        var get = require('../lib/loader').getContent(doc, function (err, content) {
-            if (err) {
-                res.send(200, content);
-            }
-            doc.Content = content;
+        if (doc.Content) {
             res.send(doc);
-        })
-    }
-    
-  }); 
-
+        } else {
+            var get = require('../lib/loader').getContent(doc, function (err, content) {
+                if (err) {
+                    res.send(200, content);
+                }
+                doc.Content = content;
+                res.send(doc);
+            });
+        }
+    });
 };
 exports.showStories = function(req, res){
     var stories = require('../lib/db')('NewsItem');

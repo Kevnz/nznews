@@ -13,7 +13,7 @@ expstate.extend(app);
 
 app.configure(function(){
     app.set('port', process.env.PORT || 3000);
-    app.set('views', __dirname + '/views'); 
+    app.set('views', __dirname + '/views');
     app.engine('handlebars', exphbs({defaultLayout: 'main'}));
     app.set('view engine', 'handlebars');
 
@@ -36,7 +36,6 @@ app.get('/api/story', stories.showStories);
 app.get('/api/story/:id', stories.showStory);
 var yuipath = path.join(__dirname, '/public/');
 app.get('/combo', combo.combine({rootPath: yuipath }), combo.respond);
-http.createServer(app).listen(app.get('port'), function(){
-    console.log("Express server listening on port " + app.get('port') + " in " + app.get('env') +" mode");
-});
+
+exports.app = app;
 
