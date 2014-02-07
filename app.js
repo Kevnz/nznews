@@ -36,6 +36,7 @@ app.get('/api/story', stories.showStories);
 app.get('/api/story/:id', stories.showStory);
 var yuipath = path.join(__dirname, '/public/');
 app.get('/combo', combo.combine({rootPath: yuipath }), combo.respond);
-
-exports.app = app;
+http.createServer(app).listen(app.get('port'), function(){
+    console.log("Express server listening on port " + app.get('port') + " in " + app.get('env') +" mode");
+});
 
